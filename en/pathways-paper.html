@@ -613,14 +613,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>3. Overview</h2>
 <div class="sectionbody">
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>GitHub was chosen as the platform to support the development of the science outputs and related software, documentation, and tools. While well known in the software development community it is lesser known in the science community. However, the core concepts behind GitHub (e.g.: versioning, repositories, etc.) were more or less understood by key
 contributers.</p>
 </div>
 <div class="paragraph">
 <p>Where possible, runnable code is provided to ensure transparency in the science. For example, an interested party could make a copy of a repository and replicate a particular output (e.g.: dataset) or even the entirety of the OpenDRR infrastucture. The platform makes heavy use of containerization and infrastructure as code technologies for rapid deployment on personal computing devices or on the cloud.</p>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>Built in features of GitHub such as continuous integration and deployment, community building, websites, and secure workspaces were seen as ways toward achieving an open and collaborative approach to science, one that seeks to build concensus and drive engagement throughout it&#8217;s lifecycle.</p>
 </div>
 <div id="image-github" class="imageblock">
@@ -629,7 +629,7 @@ contributers.</p>
 </div>
 <div class="title">Figure 1. OpenDRR GitHub</div>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>Due to the diversity of use cases and user profiles for the information products (e.g.: maps, visualizations) it was clear that a single solution would not be sufficient. It was determined that a purpose built web application in addition to a customizable dashboard environment would likely meet the needs of all users.</p>
 </div>
 <div class="paragraph">
@@ -684,10 +684,10 @@ contributers.</p>
 <div class="paragraph">
 <p>The stack of technologies can be configured to run on a local machine with PostgreSQL and ElasticSearch environments running locally or can be configured to communicate with cloud deployments of these services. For example, the stack can be configured to communicate simultaneously with a PostgreSQL database on Amazon Web Services (AWS) Relational Database Service (RDS) and a Containerized ElasticSearch environment on an AWS Elastic Container Service (ECS). A common use case is to run the ETL process on a local desktop or AWS Elastic Compute Cloud (EC2) with a local containerized PostgreSQL environment and a cloud deployed ElasticSearch environment which can support a public or private application programming interface (API).</p>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>The ETL process currently relies on a main shell script titled 'add_data.sh' which downloads the required source data files including comma separated value (csv), and GeoPackages (gpkg) into the local filesystem and performs necessary transformations to load the data into a PostgreSQL database. The script is written to be flexible enough to load any number of conformant deterministic earthquake scenarios and national seismic risk model data? and allows some flexibility in the contents of the input data as long as a minimal number of required fields are present. Once the required source data has been loaded into the database, a number of Structured Query Language (SQL) scripts help transform the data into a framework of meaningful earthquake risk indicators which in turn gets pushed to ES/Kibana ??? .</p>
 </div>
-<div class="paragraph">
+<div class="paragraph text-justify">
 <p>Discuss the postgresql database? Briefly?  Schemas?
 The PostgreSQL database is created and has PostGIS extension enabled to allow for spatial data queries.   The source datas are loaded into their respected schema names and the results are generated into their respected schemas with results_ prefix.????</p>
 </div>
