@@ -459,7 +459,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_introduction">1. Introduction</a></li>
 <li><a href="#_platform_requirements">2. Platform Requirements</a></li>
 <li><a href="#_overview">3. Overview</a></li>
-<li><a href="#_architecture">4. Architecture</a></li>
+<li><a href="#_architecture">4. Architecture</a>
+<ul class="sectlevel2">
+<li><a href="#_data_processing_pipeline">4.1. Data Processing Pipeline</a></li>
+<li><a href="#_data_dissemination">4.2. Data Dissemination</a></li>
+</ul>
+</li>
 <li><a href="#_lessons_learned">5. Lessons Learned</a>
 <ul class="sectlevel2">
 <li><a href="#_open_source_open_data_open_science_open_process">5.1. Open Source, Open Data, Open Science, Open Process</a></li>
@@ -560,7 +565,7 @@ contributers.</p>
 <div class="title">Figure 2. OpenDRR Kibana</div>
 </div>
 <div class="paragraph">
-<p>The purpose built application, called <a href="https://riskprofiler.ca">RiskProfiler</a>, is a custom web application that connects to a variety of services including the Elasticsearch document store. Build to be highly scalable and user friendly, it seeks to communicate the key messages relating to natural hazard (i.e.: earthquake) risk. It provides for some basic filtering and visualization in an area of interest, such as a community or region.</p>
+<p>The purpose built application, called <a href="https://riskprofiler.ca">RiskProfiler</a>, is a custom web application that connects to a variety of services including the Elasticsearch document store. Built to be highly scalable and user friendly, it seeks to communicate the key messages relating to natural hazard (i.e.: earthquake) risk. It provides for some basic filtering and visualization in an area of interest, such as a community or region.</p>
 </div>
 <div id="image-riskprofiler" class="imageblock">
 <div class="content">
@@ -573,11 +578,16 @@ contributers.</p>
 <div class="sect1">
 <h2 id="_architecture"><a class="anchor" href="#_architecture"></a>4. Architecture</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Do we need to do some diagram to show the flow?</p>
+<div class="sect2">
+<h3 id="_data_processing_pipeline"><a class="anchor" href="#_data_processing_pipeline"></a>4.1. Data Processing Pipeline</h3>
+<div id="image-etl" class="imageblock">
+<div class="content">
+<img src="img/opendrr-etl.png" alt="OpenDRR Data Processing Pipeline">
+</div>
+<div class="title">Figure 4. OpenDRR Data Processing Pipeline</div>
 </div>
 <div class="paragraph">
-<p>The OpenDRR platform extract-transform-load (ETL) pipeline consists of several open source technologies, namely PostgreSQL with PostGIS extension, Python, ElasticSearch/Kibana and PyGeoAPI. Each application is containerized using separate Docker containers which are orchestrated using Docker-Compose.</p>
+<p>The OpenDRR platform data processing pipeline consists of several open source technologies, namely PostgreSQL with PostGIS extension, Python, ElasticSearch/Kibana and PyGeoAPI. Each application is containerized using separate Docker containers which are orchestrated using Docker-Compose.</p>
 </div>
 <div class="paragraph">
 <p>Source data for this project includes the National Human Settlement Layers (physical exposure and social vulnerability), the National Seismic Risk model for Canada (CanadaSRM2, probabilistic), Canada’s National Earthquake Scenario Catalogue (deterministic), and boundary geometries are stored on the Open Disaster Risk Reduction Platform (OpenDRR) GitHub site using a large file storage service called Git LFS. The stack of technologies can be configured to run on a local machine with PostgreSQL and ElasticSearch environments running locally or can be configured to communicate with cloud deployments of these services. For example, the stack can be configured to communicate simultaneously with a PostgreSQL database on Amazon Web Services (AWS) Relational Database Service (RDS) and a Containerized ElasticSearch environment on an AWS Elastic Container Service (ECS). A common use case is to run the ETL process on a local desktop or AWS Elastic Compute Cloud (EC2) with a local containerized PostgreSQL environment and a cloud deployed ElasticSearch environment which can support a public or private application programming interface (API).</p>
@@ -594,6 +604,28 @@ The PostgreSQL database is created and has PostGIS extension enabled to allow fo
 </div>
 <div class="paragraph">
 <p>These results are aggregated at several different spatial scales, building, sauid, and csd level. The building level is the finest spatial resolution and aggregates all buildings of simmilar construction type for a given neighborhood. The Sauid level of aggregation groups all building types across the whole neighbourhood polygon. The Census Sub-divison (CSD) aggregation is a coarse aggregtion of all assets within a given CSD as defined by Statistics Canada.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_dissemination"><a class="anchor" href="#_data_dissemination"></a>4.2. Data Dissemination</h3>
+<div class="sect3">
+<h4 id="_apis"><a class="anchor" href="#_apis"></a>4.2.1. API&#8217;s</h4>
+<div id="image-apis" class="imageblock">
+<div class="content">
+<img src="img/opendrr-apis.png" alt="OpenDRR API Stack" width="400">
+</div>
+<div class="title">Figure 5. OpenDRR API Stack</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_applications"><a class="anchor" href="#_applications"></a>4.2.2. Applications</h4>
+<div id="image-apps" class="imageblock">
+<div class="content">
+<img src="img/opendrr-apps.png" alt="OpenDRR Application Stack" width="300">
+</div>
+<div class="title">Figure 6. OpenDRR Application Stack</div>
+</div>
+</div>
 </div>
 </div>
 </div>
