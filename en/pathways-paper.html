@@ -616,14 +616,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_overview"><a class="anchor" href="#_overview"></a>3. Overview</h2>
 <div class="sectionbody">
 <div class="paragraph text-justify">
-<p>GitHub was chosen as the platform to support the development of the science outputs and related software, documentation, and tools. While well known in the software development community it is lesser known in the science community. However, the core concepts behind GitHub (e.g.: versioning, repositories, etc.) were more or less understood by key
-contributers.</p>
+<p>GitHub was chosen as the platform to support the development of the science outputs and related software, documentation, and tools. While well known in the software development community, it is lesser-known in the science community. However, the core concepts behind GitHub (e.g., versioning, repositories) were more or less understood by key
+contributors.</p>
 </div>
 <div class="paragraph">
-<p>Where possible, runnable code is provided to ensure transparency in the science. For example, an interested party could make a copy of a repository and replicate a particular output (e.g.: dataset) or even the entirety of the OpenDRR infrastucture. The platform makes heavy use of containerization and infrastructure as code technologies for rapid deployment on personal computing devices or on the cloud.</p>
+<p>Where possible, runnable code is available to ensure transparency in the science. For example, an interested party could clone a repository and replicate a particular output, e.g., a dataset or even the entirety of the OpenDRR infrastructure. The platform makes heavy use of containerization and infrastructure as code technologies for rapid deployment on personal computing devices or the cloud.</p>
 </div>
 <div class="paragraph text-justify">
-<p>Built in features of GitHub such as continuous integration and deployment, community building, websites, and secure workspaces were seen as ways toward achieving an open and collaborative approach to science, one that seeks to build concensus and drive engagement throughout it&#8217;s lifecycle.</p>
+<p>Built-in features of GitHub such as continuous integration and deployment, community building, websites, and secure workspaces are tools for achieving an open and collaborative approach to science, one that seeks to build consensus and drive engagement throughout its lifecycle.</p>
 </div>
 <div id="image-github" class="imageblock">
 <div class="content">
@@ -632,28 +632,28 @@ contributers.</p>
 <div class="title">Figure 1. OpenDRR GitHub</div>
 </div>
 <div class="paragraph text-justify">
-<p>Due to the diversity of use cases and user profiles for the information products (e.g.: maps, visualizations) it was clear that a single solution would not be sufficient. It was determined that a purpose built web application in addition to a customizable dashboard environment would likely meet the needs of all users.</p>
+<p>Due to the diversity of use cases and user profiles for the information products (e.g., maps, visualizations), it was clear that a single solution would not be sufficient. It was determined that a purpose-built web application and a dashboard environment would be required to meet the needs of all users.</p>
 </div>
 <div class="paragraph">
-<p>The dashboard environment is provided by Kibana<sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> which connects to an Elasticsearch document store. This environment is highly customizable and allows individuals and organizations to create public or private spaces where they can query and vizualize all available data in an intuitive way.</p>
+<p>The dashboard environment, provided by Kibana <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> connects to an Elasticsearch document store. This environment is highly customizable and allows individuals and organizations to create public or private spaces where they can query and intuitively visualize all available data.</p>
 </div>
 <div id="image-kibana" class="imageblock">
 <div class="content">
-<img src="img/img/opendrr-kibana.png" alt="OpenDRR Kibana" width="300">
+<img src="img/opendrr-kibana.png" alt="OpenDRR Kibana" width="300">
 </div>
 <div class="title">Figure 2. OpenDRR Kibana</div>
 </div>
 <div class="paragraph">
-<p>The purpose built application, called RiskProfiler<sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup>, is a custom web application that connects to a variety of services including the Elasticsearch document store. Built to be highly scalable and user friendly, it seeks to communicate the key messages relating to natural hazard risk. It provides for some basic filtering and visualization in an area of interest, such as a community or region.</p>
+<p>The purpose-built application, called RiskProfiler <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> is a custom web application. Built to be highly scalable and user-friendly, it seeks to communicate the key messages relating to natural hazard risk. It provides basic filtering and visualization in an area of interest, such as a community or region.</p>
 </div>
 <div id="image-riskprofiler" class="imageblock">
 <div class="content">
-<img src="img/img/opendrr-riskprofiler.png" alt="OpenDRR RiskProfiler" width="300">
+<img src="img/opendrr-riskprofiler.png" alt="OpenDRR RiskProfiler" width="300">
 </div>
 <div class="title">Figure 3. OpenDRR RiskProfiler</div>
 </div>
 <div class="paragraph">
-<p>In it&#8217;s initial release, RiskProfiler will focus primarily on earthquake risk but the intention is to include additional natural hazard risk assessements including flood, wildfire, landslides and tsunami.</p>
+<p>In the initial release, RiskProfiler will focus primarily on earthquake risk, but the intention is to include additional natural hazard risk assessments, e.g., flood, wildfire, landslides, and tsunami.</p>
 </div>
 </div>
 </div>
