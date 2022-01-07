@@ -706,7 +706,16 @@ The PostgreSQL database is created and has PostGIS extension enabled to allow fo
 <p>The data dissemination architecture includes API&#8217;s and applications that are designed to provide mulitple channels for access to scientific datasets and products.</p>
 </div>
 <div class="sect3">
-<h4 id="_api_stack"><a class="anchor" href="#_api_stack"></a>4.2.1. API Stack</h4>
+<h4 id="_github"><a class="anchor" href="#_github"></a>4.2.1. GitHub</h4>
+<div class="paragraph">
+<p>OpenDRR data products are made available in Geopackage <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> (GPKG) format in their respective repositories on GitHub. Datasets can be found in release assets for each release of the product and so they are versioned to ensure that consumers  are using the most up to date data.</p>
+</div>
+<div class="paragraph">
+<p>Checksums are also provided for each file in a dataset, so that consumers can verify the itegrity of the data, an important consideration for any data being used to support decision making.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_api_stack"><a class="anchor" href="#_api_stack"></a>4.2.2. API Stack</h4>
 <div id="image-apis" class="imageblock right">
 <div class="content">
 <img src="img/opendrr-apis.png" alt="OpenDRR API Stack" width="400">
@@ -722,7 +731,7 @@ The PostgreSQL database is created and has PostGIS extension enabled to allow fo
 <p><a href="https://geo-api.riskprofiler.ca" class="bare">https://geo-api.riskprofiler.ca</a></p>
 </div>
 <div class="paragraph">
-<p>Complying with Open Geospatial Consortia <sup class="footnote">[<a id="_footnoteref_4" class="footnote" href="#_footnotedef_4" title="View footnote.">4</a>]</sup> standards, it provides a geospatial data endpoint for GIS application developers. It is implemented using pygeoapi <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup> deployed in a Docker container. Pygeoapi is connected to an Elasticsearch document store.</p>
+<p>Complying with Open Geospatial Consortium (OGC) <sup class="footnote">[<a id="_footnoteref_5" class="footnote" href="#_footnotedef_5" title="View footnote.">5</a>]</sup> standards, it provides a geospatial data endpoint for GIS application developers. It is implemented using pygeoapi <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup> deployed in a Docker container. Pygeoapi is connected to an Elasticsearch document store.</p>
 </div>
 <div class="paragraph">
 <p>A developer portal is provided that can be used to formulate and test queries against the API. At time writing the API supports basic querying due to the evolving nature of OGC API - Features Part 3: Filtering and the Common Query Language (CQL).</p>
@@ -734,29 +743,29 @@ The PostgreSQL database is created and has PostGIS extension enabled to allow fo
 <div class="title">Note</div>
 </td>
 <td class="content">
-pygoapi also provides an OGC API - Records <sup class="footnote">[<a id="_footnoteref_6" class="footnote" href="#_footnotedef_6" title="View footnote.">6</a>]</sup> endpoint that is being explored for future use as a metadata API.
+pygoapi also provides an OGC API - Records <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup> endpoint that is being explored for future use as a metadata API.
 </td>
 </tr>
 </table>
 </div>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>4.2.2. Elasticsearch</h4>
+<div class="sect4">
+<h5 id="_elasticsearch"><a class="anchor" href="#_elasticsearch"></a>Elasticsearch</h5>
 <div class="paragraph">
 <p><a href="https://api.riskprofiler.ca" class="bare">https://api.riskprofiler.ca</a></p>
 </div>
 <div class="paragraph">
-<p>The Elasticsearch API follows REST <sup class="footnote">[<a id="_footnoteref_7" class="footnote" href="#_footnotedef_7" title="View footnote.">7</a>]</sup> best practices. Configured as a read-only (i.e.: HTTP GET verb) it allows for access to datasets and their properties. Using a proprietary query syntax, developers can issue queries to return summary statistics, geospatial features, and feature properties.</p>
+<p>The Elasticsearch API follows REST <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup> best practices. Configured as a read-only (i.e.: HTTP GET verb) it allows for access to datasets and their properties. Using a proprietary query syntax, developers can issue queries to return summary statistics, geospatial features, and feature properties.</p>
 </div>
 <div class="paragraph">
-<p>The Elasticsearch API provides data to the Kibana dashboard application <sup class="footnote">[<a id="_footnoteref_8" class="footnote" href="#_footnotedef_8" title="View footnote.">8</a>]</sup>. Developers can set up an account in the Kibana dashboard where query formulation and testing tools are provided.</p>
+<p>The Elasticsearch API provides data to the Kibana dashboard application <sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup>. Developers can set up an account in the Kibana dashboard where query formulation and testing tools are provided.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_esri"><a class="anchor" href="#_esri"></a>4.2.3. Esri</h4>
+<div class="sect4">
+<h5 id="_esri"><a class="anchor" href="#_esri"></a>Esri</h5>
 <div class="paragraph">
 <p>The Federal Geospatial Platform (FGP) is a Government of Canada clearing house for geospatial data. The FGP provides enterprise grade geospatial infrastructure and support services to facilitate the dissemination of data. OpenDRR datasets are hosted on the FGP and made available via Esri REST services for organisations that utilize Esri based tools and applications.</p>
+</div>
 </div>
 </div>
 </div>
@@ -768,7 +777,7 @@ pygoapi also provides an OGC API - Records <sup class="footnote">[<a id="_footno
 <div class="sect2">
 <h3 id="_working_in_the_open"><a class="anchor" href="#_working_in_the_open"></a>5.1. Working in the Open</h3>
 <div class="paragraph">
-<p>Working in the open is standard practice in the software community, but this is not the case in the scientific community. Despite many science-based institutions promulgating FAIR<sup class="footnote">[<a id="_footnoteref_9" class="footnote" href="#_footnotedef_9" title="View footnote.">9</a>]</sup> and Open Science<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup>, they largely ignore the very principles upon which these are based. Instead of working in the open from the outset, science continues to be carried out behind closed doors until such time that a final product is formally published.</p>
+<p>Working in the open is standard practice in the software community, but this is not the case in the scientific community. Despite many science-based institutions promulgating FAIR<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup> and Open Science<sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup>, they largely ignore the very principles upon which these are based. Instead of working in the open from the outset, science continues to be carried out behind closed doors until such time that a final product is formally published.</p>
 </div>
 <div class="paragraph">
 <p>The science-based organisation under which the OpenDRR platform is being developed decided to take a more liberal approach, open by default but closed where required. Unfortunately, internal policies regarding Open Science were not yet fully developed so the default approach was to do much of the actual science modeling and development in private repositories until peer review can be completed. An unfortunate consequence of misguided but well-intentioned policies (e.g.: NRCan&#8217;s Scientific Integrity Policy).</p>
@@ -950,25 +959,28 @@ pygoapi also provides an OGC API - Records <sup class="footnote">[<a id="_footno
 <a href="#_footnoteref_3">3</a>. <a href="https://riskprofiler.ca" class="bare">https://riskprofiler.ca</a>
 </div>
 <div class="footnote" id="_footnotedef_4">
-<a href="#_footnoteref_4">4</a>. <a href="https://ogcapi.ogc.org/features/" class="bare">https://ogcapi.ogc.org/features/</a>
+<a href="#_footnoteref_4">4</a>. <a href="https://www.ogc.org/standards/geopackage" class="bare">https://www.ogc.org/standards/geopackage</a>
 </div>
 <div class="footnote" id="_footnotedef_5">
-<a href="#_footnoteref_5">5</a>. <a href="https://pygeoapi.io" class="bare">https://pygeoapi.io</a>
+<a href="#_footnoteref_5">5</a>. <a href="https://ogcapi.ogc.org/features/" class="bare">https://ogcapi.ogc.org/features/</a>
 </div>
 <div class="footnote" id="_footnotedef_6">
-<a href="#_footnoteref_6">6</a>. <a href="https://ogcapi.ogc.org/records/" class="bare">https://ogcapi.ogc.org/records/</a>
+<a href="#_footnoteref_6">6</a>. <a href="https://pygeoapi.io" class="bare">https://pygeoapi.io</a>
 </div>
 <div class="footnote" id="_footnotedef_7">
-<a href="#_footnoteref_7">7</a>. <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm" class="bare">https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm</a>
+<a href="#_footnoteref_7">7</a>. <a href="https://ogcapi.ogc.org/records/" class="bare">https://ogcapi.ogc.org/records/</a>
 </div>
 <div class="footnote" id="_footnotedef_8">
-<a href="#_footnoteref_8">8</a>. <a href="https://dashboard.riskprofiler.ca" class="bare">https://dashboard.riskprofiler.ca</a>
+<a href="#_footnoteref_8">8</a>. <a href="https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm" class="bare">https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm</a>
 </div>
 <div class="footnote" id="_footnotedef_9">
-<a href="#_footnoteref_9">9</a>. link-to-FAIR-Principles
+<a href="#_footnoteref_9">9</a>. <a href="https://dashboard.riskprofiler.ca" class="bare">https://dashboard.riskprofiler.ca</a>
 </div>
 <div class="footnote" id="_footnotedef_10">
-<a href="#_footnoteref_10">10</a>. link-to-Open-Science
+<a href="#_footnoteref_10">10</a>. link-to-FAIR-Principles
+</div>
+<div class="footnote" id="_footnotedef_11">
+<a href="#_footnoteref_11">11</a>. link-to-Open-Science
 </div>
 </div>
 <div id="footer">
