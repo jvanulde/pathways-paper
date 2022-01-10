@@ -471,8 +471,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_continuous_integration">5.2. Continuous Integration</a></li>
 <li><a href="#_security">5.3. Security</a></li>
 <li><a href="#_the_software_development_lifecycle">5.4. The Software Development Lifecycle</a></li>
-<li><a href="#_github_restrictions_on_file_size">5.5. Github restrictions on file size</a></li>
-<li><a href="#_optional_opendrr_github_io_got_falsely_flagged_as_phishing_or_malicious">5.6. [optional] opendrr.github.io got falsely flagged as phishing or malicious</a></li>
+<li><a href="#_github_2">5.5. Github</a></li>
 </ul>
 </li>
 <li><a href="#_future_development">6. Future Development</a>
@@ -777,44 +776,38 @@ pygoapi also provides an OGC API - Records <sup class="footnote">[<a id="_footno
 <div class="sect2">
 <h3 id="_working_in_the_open"><a class="anchor" href="#_working_in_the_open"></a>5.1. Working in the Open</h3>
 <div class="paragraph">
-<p>Working in the open is standard practice in the software community, but this is not the case in the scientific community. Despite many science-based institutions promulgating FAIR<sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup> and Open Science<sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup>, they largely ignore the very principles upon which these are based. Instead of working in the open from the outset, science continues to be carried out behind closed doors until such time that a final product is formally published.</p>
+<p>Working in the open is standard practice in the software community, but this is not the case in the scientific community. Despite many science-based institutions promulgating FAIR <sup class="footnote">[<a id="_footnoteref_10" class="footnote" href="#_footnotedef_10" title="View footnote.">10</a>]</sup> and Open Science <sup class="footnote">[<a id="_footnoteref_11" class="footnote" href="#_footnotedef_11" title="View footnote.">11</a>]</sup>, they largely ignore the very principles upon which these are based. Instead of working in the open from the outset, science continues to be carried out behind closed doors until such time that a final product is formally published.</p>
 </div>
 <div class="paragraph">
-<p>The science-based organisation under which the OpenDRR platform is being developed decided to take a more liberal approach, open by default but closed where required. Unfortunately, internal policies regarding Open Science were not yet fully developed so the default approach was to do much of the actual science modeling and development in private repositories until peer review can be completed. An unfortunate consequence of misguided but well-intentioned policies (e.g.: NRCan&#8217;s Scientific Integrity Policy).</p>
+<p>The science-based organisation under which the OpenDRR platform is being developed decided to take a more liberal approach, open by default but closed where required. Unfortunately, internal policies regarding Open Science were not yet fully developed, so the default approach was to do much of the actual science modeling and development in private repositories until peer review can be completed. An unfortunate consequence of misguided but well-intentioned policies (e.g.: NRCan&#8217;s Scientific Integrity Policy).</p>
 </div>
 <div class="paragraph">
 <p>While not ideal, the platform did demonstrate that peer-review of science using GitHub was tractable. Transparency in the science that informs government policy is an important part of any democracy, and so the platform will continue to aspire towards a future where policy-driven decisions are supported by data that is aligned with the principles of FAIR and Open Science.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>(May seem scary at first?) but many benefits</p>
-</li>
-<li>
-<p>full openness, transparency, accountability</p>
-</li>
-<li>
-<p>GitHub platform offers a lot of features and flexibility that we need</p>
-</li>
-<li>
-<p>Industry best practices</p>
-</li>
-<li>
-<p>Mutually beneficial relationship with GEM (OpenQuake)</p>
-</li>
-<li>
-<p>pygeoapi</p>
-</li>
-<li>
-<p>etc.</p>
-</li>
-</ul>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_continuous_integration"><a class="anchor" href="#_continuous_integration"></a>5.2. Continuous Integration</h3>
 <div class="paragraph">
-<p>Usage of CI (e.g.: GitHub Actions) to generate release assets, do QA, and run data processing scripts.</p>
+<p>Usage of CI (e.g. GitHub Actions) to generate release assets, do QA, and run data processing scripts.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>generate release assets</p>
+</li>
+<li>
+<p>translate README files</p>
+</li>
+<li>
+<p>generate and add add release assets</p>
+</li>
+<li>
+<p>run tests</p>
+</li>
+<li>
+<p>generate metadata</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -846,29 +839,25 @@ pygoapi also provides an OGC API - Records <sup class="footnote">[<a id="_footno
 <div class="sect2">
 <h3 id="_the_software_development_lifecycle"><a class="anchor" href="#_the_software_development_lifecycle"></a>5.4. The Software Development Lifecycle</h3>
 <div class="paragraph">
-<p>Agile works for software but not so well with science!</p>
+<p>The intersection of science delivery and software development has traditionally been carried out indpendent of each other, that is the science is completed and then the system is developed. With a very ambitious delivery schedule it was decided to do both in parallel.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_github_restrictions_on_file_size"><a class="anchor" href="#_github_restrictions_on_file_size"></a>5.5. Github restrictions on file size</h3>
 <div class="paragraph">
-<p>The file size restrictions imposed by the GitHub platform were an issue for some repositories.</p>
+<p>The Pathways OpenDRR development utilized the scrum process with two-week iterations. Tasks were assigned to each iteration and reported on every two weeks. The complexity of the products being developed necessitated a tight coupling of the raw science outputs with custom software and continuous integration processes.</p>
+</div>
+<div class="paragraph">
+<p>This tight coupling presented a number of challenges. Firstly, it was immediately apparent that a high degree of flexibility would need to be designed into the software to accommodate constantly changing data schemas. Secondly, the development of the science outputs moved at a much slower pace as it required collaboration with other scientists (e.g.: peer reviews). The two week interation cycle resulted in too much overhead on the development of the science outputs, and as a consequence engagement with the science staff suffered.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_optional_opendrr_github_io_got_falsely_flagged_as_phishing_or_malicious"><a class="anchor" href="#_optional_opendrr_github_io_got_falsely_flagged_as_phishing_or_malicious"></a>5.6. [optional] opendrr.github.io got falsely flagged as phishing or malicious</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>CIRA, Google, VirusTotal; took a while to get off e.g. Microsoft SmartScreen</p>
-</li>
-<li>
-<p>Possibly due to the use of non Canada.ca template on a non .ca domain?</p>
-</li>
-<li>
-<p><a href="https://github.com/OpenDRR/opendrr/issues/122" class="bare">https://github.com/OpenDRR/opendrr/issues/122</a></p>
-</li>
-</ul>
+<h3 id="_github_2"><a class="anchor" href="#_github_2"></a>5.5. Github</h3>
+<div class="paragraph">
+<p>The use of GitHub as a platform for the development of the science outputs was well recieved and uptake was high. The core concepts of Git were well understood and the distributed nature of the platform proved to be a benefit during the COVID 19 pandemic, which saw most project participants working remotely, often disconnected from the enterprise network. Fine grained control over access to repositories and associated assets was a critical factor in the success of the platform to support Open Science.</p>
+</div>
+<div class="paragraph">
+<p>The 100MB file size restriction imposed by the GitHub platform was an issue for some repositories. Thankfully, GitHub provides an alternative storage called "Git Large File Storage" (Git LFS) which was enabled on many repositories. Bandwidth quotas for Git LFS were exceeded. GitHub provides 1GB of free storage and 1GB per month of free bandwidth. Additional costs were incurred to increase the quotas.</p>
+</div>
+<div class="paragraph">
+<p>To mitigate the potential of increasing costs for managing large files a strategy of including datasets and files in the realease assets of a repository was adopted. GitHub allows for release assets (e.g.: files, datasets) up to 2GB to be stored and disseminated at no cost.</p>
 </div>
 </div>
 </div>
@@ -977,10 +966,10 @@ pygoapi also provides an OGC API - Records <sup class="footnote">[<a id="_footno
 <a href="#_footnoteref_9">9</a>. <a href="https://dashboard.riskprofiler.ca" class="bare">https://dashboard.riskprofiler.ca</a>
 </div>
 <div class="footnote" id="_footnotedef_10">
-<a href="#_footnoteref_10">10</a>. link-to-FAIR-Principles
+<a href="#_footnoteref_10">10</a>. <a href="https://www.go-fair.org/fair-principles/" class="bare">https://www.go-fair.org/fair-principles/</a>
 </div>
 <div class="footnote" id="_footnotedef_11">
-<a href="#_footnoteref_11">11</a>. link-to-Open-Science
+<a href="#_footnoteref_11">11</a>. <a href="https://science.gc.ca/eic/site/063.nsf/eng/h_97992.html" class="bare">https://science.gc.ca/eic/site/063.nsf/eng/h_97992.html</a>
 </div>
 </div>
 <div id="footer">
